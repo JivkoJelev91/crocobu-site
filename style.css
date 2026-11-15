@@ -1,0 +1,51 @@
+/* Crocobu public pages (privacy, account deletion): the game's colours, one readable column */
+:root {
+  --bg: #0b2a2e;
+  --panel: #14334a;
+  --ink: #f2fbff;
+  --muted: #a8d8de;
+  --gold: #ffd23f;
+  --green: #5fd04a;
+  --rim: #0b2233;
+  --link: #8fe6ff;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body {
+  margin: 0;
+  background: radial-gradient(circle at 50% 0%, #1f7f86, var(--bg) 55%) no-repeat, var(--bg);
+  color: var(--ink);
+  font: 500 17px/1.6 'Nunito', 'Trebuchet MS', Arial, sans-serif;
+  padding-block: 24px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+main { max-width: 760px; margin: 0 auto; }
+header { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
+.logo { font-weight: 900; font-size: 34px; color: #8ee05c; letter-spacing: 1px; text-shadow: 0 3px 0 #1f6e22, 0 5px 0 var(--rim); text-decoration: none; }
+.langs { margin-left: auto; display: flex; gap: 6px; }
+.langs button { font: 800 14px/1 inherit; color: var(--ink); background: var(--panel); border: 2px solid var(--rim); border-radius: 999px; padding: 7px 12px; cursor: pointer; }
+.langs button[aria-pressed="true"] { background: var(--gold); color: #3a2400; }
+.langs button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+article { background: var(--panel); border: 3px solid var(--rim); border-radius: 20px; padding: 20px 24px 24px; box-shadow: 0 5px 0 rgba(0,0,0,.35); }
+h1 { margin: 0 0 4px; font-size: 30px; line-height: 1.2; color: var(--gold); text-wrap: balance; }
+h2 { margin: 26px 0 6px; font-size: 21px; line-height: 1.25; color: #9ff0ff; text-wrap: balance; }
+p, li { max-width: 68ch; }
+p { margin: 8px 0; }
+ul, ol { padding-left: 22px; margin: 8px 0; }
+li { margin: 4px 0; }
+.date { color: var(--muted); font-size: 15px; margin: 0 0 14px; }
+a { color: var(--link); }
+b { font-weight: 800; }
+.path { display: inline-block; font-weight: 800; background: rgba(255,255,255,.08); border-radius: 8px; padding: 0 8px; }
+.box { background: rgba(255,210,63,.12); border: 2px solid rgba(255,210,63,.45); border-radius: 14px; padding: 10px 14px; margin: 12px 0; }
+.mail { font-weight: 800; user-select: all; overflow-wrap: anywhere; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+.table { overflow-x: auto; margin: 10px 0; }
+th, td { text-align: left; vertical-align: top; padding: 7px 10px; border-bottom: 1px solid rgba(255,255,255,.12); }
+th { color: var(--muted); font-weight: 800; }
+footer { margin-top: 18px; text-align: center; color: var(--muted); font-size: 14px; }
+footer a { margin: 0 8px; }
+[data-lang][hidden] { display: none !important; }
+@media (max-width: 520px) { body { font-size: 16px; } h1 { font-size: 25px; } article { padding: 16px; } .logo { font-size: 28px; } }
